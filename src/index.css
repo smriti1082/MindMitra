@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+}
+
+/* Accessibility Font Size Scales */
+body.font-scale-normal {
+  font-size: 16px;
+}
+
+body.font-scale-large {
+  font-size: 18px;
+}
+
+body.font-scale-xl {
+  font-size: 21px;
+}
+
+/* High Contrast Mode for elderly with low contrast sensitivity or cataracts */
+body.mode-high-contrast {
+  background-color: #0F172A !important;
+  color: #FFFFFF !important;
+}
+
+body.mode-high-contrast .bg-white {
+  background-color: #1E293B !important;
+  color: #F8FAFC !important;
+  border-color: #475569 !important;
+}
+
+body.mode-high-contrast .text-slate-600,
+body.mode-high-contrast .text-slate-500,
+body.mode-high-contrast .text-slate-400 {
+  color: #E2E8F0 !important;
+}
+
+body.mode-high-contrast .bg-slate-50,
+body.mode-high-contrast .bg-slate-100 {
+  background-color: #334155 !important;
+  color: #FFFFFF !important;
+}
+
+body.mode-high-contrast .border-slate-100,
+body.mode-high-contrast .border-slate-200 {
+  border-color: #64748B !important;
+}
+
+body.mode-high-contrast button {
+  box-shadow: 0 0 0 2px #38BDF8 !important;
+}
+
+/* Card 3D Flip Styles for Memory Matching Game */
+.perspective-1000 {
+  perspective: 1000px;
+}
+
+.transform-style-3d {
+  transform-style: preserve-3d;
+}
+
+.backface-hidden {
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.rotate-y-180 {
+  transform: rotateY(180deg);
+}
+
+/* Custom smooth transitions for gentle elderly interaction */
+.gentle-transition {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Custom button touch target guarantee for tremors */
+.elderly-tap-target {
+  min-height: 54px;
+  min-width: 54px;
+}
+
+/* Pulsing aura animation for voice assistant */
+@keyframes voice-pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.7);
+  }
+  70% {
+    transform: scale(1.08);
+    box-shadow: 0 0 0 16px rgba(20, 184, 166, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(20, 184, 166, 0);
+  }
+}
+
+.animate-voice-glow {
+  animation: voice-pulse 2s infinite;
+}
+
+/* Water wave filling effect */
+@keyframes water-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.water-gradient {
+  background: linear-gradient(135deg, #38BDF8, #0284C7, #0D9488);
+  background-size: 200% 200%;
+  animation: water-shimmer 4s ease infinite;
+}
